@@ -1,0 +1,10 @@
+server:
+  port: 8444
+spring:
+  application:
+    name: user-service
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        cluster-name: ZHENGZHOU

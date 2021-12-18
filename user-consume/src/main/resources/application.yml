@@ -1,0 +1,20 @@
+server:
+  port: 8443
+spring:
+  application:
+    name: user-consume
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        cluster-name: ZHENGZHOU
+        #namespace: 8276004a-627f-4858-9143-ab2e4244722b #命名空间
+feign:
+#  client:
+#    config:
+#      default:
+#        loggerLevel:BASIC #日志级别
+  httpclient:
+    enabled: true   #开启httpclient连接池支持
+    max-connections: 200     #最大连接数
+    max-connections-per-route: 50   #每个路径最大连接数

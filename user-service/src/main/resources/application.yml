@@ -1,0 +1,26 @@
+server:
+    port: 8442
+spring:
+  application:
+    name: user-service
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        cluster-name: ZHENGZHOU  #集群命名
+        #namespace: 8276004a-627f-4858-9143-ab2e4244722b #命名空间
+        ephemeral: true  #健康状态
+
+
+  datasource:
+    url: jdbc:mysql://10.128.106.79:3306/usercenter?characterEncoding=UTF-8&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT%2B8
+    username: root
+    password: oneapm
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*.xml
+  type-aliases-package: com.demo.model
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    call-setters-on-nulls: true
